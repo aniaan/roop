@@ -6,11 +6,11 @@ import numpy
 import roop.globals
 from roop.typing import Frame, Face
 
-FACE_ANALYSER = None
+FACE_ANALYSER: Optional[insightface.app.FaceAnalysis] = None
 THREAD_LOCK = threading.Lock()
 
 
-def get_face_analyser() -> Any:
+def get_face_analyser() -> insightface.app.FaceAnalysis:
     global FACE_ANALYSER
 
     with THREAD_LOCK:
